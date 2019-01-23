@@ -48,7 +48,7 @@ App = {
         $("#accountAddress").html("Your Account: " + account);
       }
     });
-
+ 
     // Load contract data
     App.contracts.Election.deployed().then(function(instance) {
       electionInstance = instance;
