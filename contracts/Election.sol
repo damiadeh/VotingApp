@@ -23,6 +23,11 @@ contract Election {
     ///Store candidates counts
     uint public candidatesCount;
 
+    //voted event
+    event votedEvent (
+        uint indexed _candidateId
+    );
+
     constructor () public {
        addCandidate("Agbaje");
        addCandidate("Sanwo-Olu");
@@ -45,6 +50,8 @@ contract Election {
 
         //update candidate voteCOunt
         candidates[_candidateId].voteCount++;
+        //trigger voted event
+        emit votedEvent(_candidateId);
     }
 
 }
